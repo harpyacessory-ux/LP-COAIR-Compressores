@@ -11,7 +11,7 @@ import type { IconName } from './icons'
 import type { Photo } from './types'
 import { site } from './site'
 
-import heroBg from '@assets/heroBg.png'
+import heroBg from '@assets/heroBg.jpg'
 
 /* ------------------------------------------------------------------ tipos */
 
@@ -56,7 +56,7 @@ export const hero = {
   ctaSecondary: 'Identifique seu compressor',
   banner: {
     src: heroBg,
-    alt: 'Compressores de ar de parafuso COAIR: XFLOW CA11, compressor sobre reservatório com secador e Heavy Duty HD55 VSD',
+    alt: 'Compressores de ar de parafuso COAIR em ambiente industrial: XFLOW CA11, compressor sobre reservatório com secador e Heavy Duty HD55 VSD',
   },
   points: [
     { icon: 'gauge', line1: 'Linhas de', line2: '10 a 300 HP' },
