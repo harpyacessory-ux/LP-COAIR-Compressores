@@ -56,7 +56,7 @@ export const hero = {
   ctaSecondary: 'Identifique seu compressor',
   banner: {
     src: heroBg,
-    alt: 'Compressor de ar de parafuso COAIR em ambiente industrial',
+    alt: 'Compressores de ar de parafuso COAIR: XFLOW CA11, compressor sobre reservatório com secador e Heavy Duty HD55 VSD',
   },
   points: [
     { icon: 'gauge', line1: 'Linhas de', line2: '10 a 300 HP' },
