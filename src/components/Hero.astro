@@ -44,27 +44,8 @@ const hasHighlight = titleRest.length > 0
     />
   </div>
 
-  {/* z2 — véu navy sob o texto */}
+  {/* z2 — véu navy sob o texto (liso, como na referência aprovada) */}
   <div class="hero-navy pointer-events-none absolute inset-y-0 left-0 z-[2] w-full"></div>
-
-  {/* z3 — malha de pontos */}
-  <div
-    class="hero-dots pointer-events-none absolute inset-y-0 left-0 z-[3] w-full opacity-[0.35] lg:[mask-image:linear-gradient(to_right,black_70%,transparent_100%)]"
-    style="background-image: radial-gradient(circle, rgb(255 255 255 / 0.5) 1px, transparent 1px); background-size: 28px 28px;"
-  ></div>
-
-  {/* z4 — mira técnica */}
-  <svg
-    class="pointer-events-none absolute top-6 left-6 z-[4] size-4 text-white/50"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.5"
-    aria-hidden="true"
-  >
-    <circle cx="12" cy="12" r="9"></circle>
-    <path d="M12 3v4M12 17v4M3 12h4M17 12h4"></path>
-  </svg>
 
   {/* z5 — conteúdo */}
   <div class="relative z-[5] mx-auto max-w-page px-6 py-20 lg:px-10 lg:py-24">
@@ -87,7 +68,7 @@ const hasHighlight = titleRest.length > 0
           )}
         </h1>
 
-        <p class="mt-5 font-sans text-lg leading-snug font-medium text-neutral-light/80 lg:max-w-[34rem] lg:text-xl">
+        <p class="mt-5 font-sans text-lg leading-snug font-medium text-neutral-light/80 lg:max-w-[31rem] lg:leading-normal">
           {hero.text}
         </p>
 
@@ -207,7 +188,6 @@ const hasHighlight = titleRest.length > 0
   /* Metade da largura da página (1320px / 2): ancora as colunas e a foto no mesmo eixo. */
   .hero-photo,
   .hero-navy,
-  .hero-dots,
   .hero-grid {
     --page-half: calc(var(--container-page) / 2);
     --page-edge: max(0px, calc(50% - var(--page-half)));
@@ -230,34 +210,30 @@ const hasHighlight = titleRest.length > 0
       grid-template-columns: minmax(0, 1fr) 270px 300px;
     }
 
-    /* Fim do bloco de texto: borda da página + padding + coluna 1, limitada a 34rem (largura do subtítulo). */
+    /* Fim do bloco de texto: borda da página + padding + coluna 1, limitada a 31rem (largura do subtítulo). */
     /* 698px = padding (2 × 40) + coluna 2 (270) + coluna 3 (300) + gaps (2 × 24). */
     .hero-photo,
-    .hero-navy,
-    .hero-dots {
-      --text-end: calc(var(--page-edge) + 2.5rem + min(34rem, 100% - 2 * var(--page-edge) - 698px));
+    .hero-navy {
+      --text-end: calc(var(--page-edge) + 2.5rem + min(31rem, 100% - 2 * var(--page-edge) - 698px));
     }
 
     /* A foto começa 80px antes do fim do texto (a máscara do <picture> faz a entrada) e vai até a borda da tela. */
+    /* Com a foto em 1,46:1, o CA11 encosta no fim do texto e o HD55 termina perto da borda. */
     .hero-photo {
       left: calc(var(--text-end) - 80px);
     }
 
-    /* Navy sólido sob o texto, dissolvendo logo depois dele. */
+    /* Navy sólido sob o texto, dissolvendo até o fim dele (o CA11 fica fora do véu). */
     .hero-navy {
-      width: calc(var(--text-end) + 60px);
+      width: calc(var(--text-end) + 10px);
       background:
         radial-gradient(900px 520px at 10% -10%, rgb(255 255 255 / 0.08) 0%, transparent 55%),
         linear-gradient(
           to left,
           transparent 0px,
-          rgb(0 33 71 / 0.7) 80px,
-          var(--color-primary-dark) 140px
+          rgb(0 33 71 / 0.7) 60px,
+          var(--color-primary-dark) 130px
         );
-    }
-
-    .hero-dots {
-      width: var(--text-end);
     }
   }
 </style>

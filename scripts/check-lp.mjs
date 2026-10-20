@@ -478,8 +478,8 @@ async function checkAssetSpecs(manifest) {
 /** Especificação das imagens da estrutura fixa, que não pertencem a nenhuma seção. */
 const FIXED_ASSET_SPECS = [
   { dir: '.', match: 'LOGO', width: 240, height: 200, alpha: true },
-  // Nesta LP a foto do hero vai do fim do texto até a borda da tela (ver Hero.astro): proporção ~1,35:1
-  { dir: '.', match: 'heroBg', width: 1981, height: 1467, alpha: false },
+  // Nesta LP a foto do hero vai do fim do texto até a borda da tela (ver Hero.astro): proporção ~1,46:1
+  { dir: '.', match: 'heroBg', width: 1981, height: 1360, alpha: false },
   { dir: 'brands', width: 400, height: 160, alpha: null },
 ]
 
